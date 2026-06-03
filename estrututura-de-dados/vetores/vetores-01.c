@@ -10,6 +10,5 @@ int main() {
     
     printf("&v[6] = %p, &v[6] = %d\n", &v[6], v[6]); // Printando um index que não foi declarado no vetor. Por isso, retorno um lixo de memória. 
     
-
     return 0;
 }
