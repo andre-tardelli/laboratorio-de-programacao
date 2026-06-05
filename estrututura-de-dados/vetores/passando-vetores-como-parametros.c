@@ -14,6 +14,11 @@ void print_vetor(const int *v, int n) {
     puts(" ");
 }
 
+void desalocar_vetor(int **v) {
+    free(*v);
+    *v = NULL;
+}
+
 int main() {
 
     puts("## VETOR ESTATICO ##");
