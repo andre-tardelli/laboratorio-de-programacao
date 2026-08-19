@@ -19,6 +19,12 @@ Livro *create_livro(char *titulo, unsigned int num_pagina, float preco) {
     return livro;
 }
 
+void  destroy_livro(Livro **livro_ref){
+    Livro *livro = *livro_ref;
+    free(livro);
+    *livro_ref = NULL;
+}
+
 void print_livro(const Livro *livro){
     printf("Titulo: %s\n", livro->titulo);
     printf("Num. Pagina: %d\n", livro->num_paginas);
@@ -29,6 +35,8 @@ int main() {
     Livro *livro_harry = create_livro("Harry Potter", 200, 25);
 
     print_livro(livro_harry);
-    
+
+    destroy_livro(&livro_harry);
+
     return 0;
 }
